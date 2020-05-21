@@ -7,6 +7,7 @@ extends RigidBody
 export var speed = 10
 export var jumpable = false
 export var jump_force = 200
+export var power = 1000
 # pick up counter
 var count
 # UI labels
@@ -19,20 +20,20 @@ var X = 0
 var Y = 1
 
 # A default position to apply forces
-var position = Vector3(0, 0, 0)
+var position = Vector3(0, 50, 4)
 
 var initial_position = get_translation()
 func _ready():
 	# When this node enters the scene, start calling its
 	# _fixed_process() method for physics logic
 #    set_fixed_process(true)
-	set_mass(0.5)
+	position = get_translation()
 	set_physics_process(true)
 	# Initialize count
 	count = 0
 	# Get labels
-	counter = get_node("/root/World/Counter")
-	winner = get_node("/root/World/Winner")
+#	counter = get_node("/root/World/Counter")
+#	winner = get_node("/root/World/Winner")
 	# Update labels
 #	update_ui()
 	# Get screen size
@@ -44,20 +45,27 @@ func _ready():
 func _physics_process(delta):
 	# Get the direction that the user wants to move
 	# in for x and z directions.
+#	print(get_linear_velocity().length())
 	var x = get_axis("horizontal") # left/right
 	var z = get_axis("vertical")   # forward/back
 	# Build a unit direction vector based on the user
 	# input we received
 	var direction = Vector3(x, 0, z).normalized()
+	print(direction)
+	var v = get_linear_velocity().length()
+	if v == 0: 
+		v = 0.1
+	var force = power / v
 	# Scale the magnitude of the applied force, for this
 	# frame, by the time required to draw a frame.
 	var magnitude =  speed * delta
 	# Apply force vector to the rigid body.
 	jump(delta)
-	ball_add_force(magnitude * direction)
+#	if (get_linear_velocity().length() <10):
+	ball_add_force(force * direction*delta)
 	out_world()
 func out_world():
-	if get_translation()[1] < -4:
+	if get_translation()[1] < -10:
 		set_translation(initial_position)
 		set_linear_velocity(Vector3(0,0,0))
 		set_angular_velocity(Vector3(0,0,0))

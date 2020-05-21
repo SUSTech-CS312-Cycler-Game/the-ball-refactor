@@ -14,7 +14,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var v = get_parent().get_linear_velocity()
-	var p = get_parent().get_translation()
-	look_at(v,p)
+#	var v = get_parent().get_linear_velocity()
+#	var p = get_parent().get_translation()
+#	look_at(v,p)
+#	print(get_transformed_aabb())
 	pass
