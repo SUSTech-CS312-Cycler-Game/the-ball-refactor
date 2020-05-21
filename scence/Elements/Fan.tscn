@@ -1,0 +1,112 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://scripts/Elements/Fan.gd" type="Script" id=1]
+[ext_resource path="res://primitives/particlePack_1.1/PNG (Transparent)/light_01.png" type="Texture" id=2]
+[ext_resource path="res://primitives/default.anim" type="Animation" id=3]
+[ext_resource path="res://primitives/Fan.DAE" type="PackedScene" id=4]
+[ext_resource path="res://primitives/images/0_Fan_1.jpg" type="Texture" id=5]
+[ext_resource path="res://primitives/base.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://primitives/Box004.mesh" type="ArrayMesh" id=8]
+[ext_resource path="res://primitives/Cylinder002.mesh" type="ArrayMesh" id=9]
+[ext_resource path="res://primitives/Tube001.mesh" type="ArrayMesh" id=10]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 2, 2, 5 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+scale = 2.0
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+params_grow = true
+params_grow_amount = 0.0
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 0.407843, 0.407843, 0.407843, 0.45098 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 2, 2 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.403922, 0.909804, 0.372549, 1 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.968627, 0.227451, 0.384314, 1 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.403922, 0.909804, 0.372549, 1 )
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.0352941, 0.415686, 0, 1 )
+
+[node name="Fan" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.223, 0 )
+script = ExtResource( 1 )
+
+[node name="fan2" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Field" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84375, 0, 0 )
+space_override = 1
+gravity_distance_scale = 0.05
+gravity_vec = Vector3( 1, 0, 0 )
+gravity = 10.0
+
+[node name="field_collison" type="CollisionShape" parent="Field"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91406, 0, -4.89063 )
+shape = SubResource( 2 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.031743, -0.0459924, -0.0499277 )
+visible = false
+amount = 6
+lifetime = 1.3
+visibility_aabb = AABB( -4, -9.94337, -4, 8, 19.8867, 8 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 5 )
+
+[node name="Fan" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.45931 )
+visible = false
+
+[node name="Fan2" type="Spatial" parent="."]
+transform = Transform( -40, 0, -1.55766e-05, 0, 40, 0, 1.55766e-05, 0, -40, -0.255125, -0.806601, 1.09737 )
+
+[node name="Cylinder002" type="MeshInstance" parent="Fan2"]
+transform = Transform( 0.393701, 0, 0, 0, -6.4142e-08, -0.393701, 0, 0.393701, -6.4142e-08, 0, 0, 0 )
+mesh = ExtResource( 9 )
+material/0 = SubResource( 6 )
+
+[node name="Box004" type="MeshInstance" parent="Fan2"]
+transform = Transform( -0.379481, -5.8666e-09, -0.104858, -0.104858, -4.69328e-08, 0.379481, -5.8666e-09, 0.393701, -4.69328e-08, -0.0103399, 0.0260675, 0 )
+mesh = ExtResource( 8 )
+material/0 = SubResource( 10 )
+material/1 = SubResource( 10 )
+material/2 = SubResource( 10 )
+material/3 = SubResource( 10 )
+material/4 = SubResource( 10 )
+material/5 = SubResource( 10 )
+
+[node name="Tube001" type="MeshInstance" parent="Fan2"]
+transform = Transform( 0.393701, 0, 3.38813e-21, 0, -6.4142e-08, -0.393701, 0, 0.393701, -6.4142e-08, 0, 0, 0 )
+mesh = ExtResource( 10 )
+material/0 = SubResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fan2"]
+autoplay = "default"
+anims/default = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Fan2"]
+transform = Transform( 0.02, 0, -1.77636e-15, 0, 0.02, 0, 0, 0, 0.024, -0.00798242, -0.00844692, -0.0141783 )
+mesh = ExtResource( 6 )
+material/0 = SubResource( 9 )

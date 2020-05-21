@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/押尾コータロー - えんぴつと五線譜.ogg-a7c4a3b83fa9a941fc2aeb9e1a89f7f8.oggstr"
+
+[deps]
+
+source_file="res://bgm/押尾コータロー - えんぴつと五線譜.ogg"
+dest_files=[ "res://.import/押尾コータロー - えんぴつと五線譜.ogg-a7c4a3b83fa9a941fc2aeb9e1a89f7f8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

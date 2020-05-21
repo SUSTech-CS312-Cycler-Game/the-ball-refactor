@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Fan.obj-1ea4ef32149683a28178cde91694f2ce.mesh"
+
+[deps]
+
+files=[ "res://.import/Fan.obj-1ea4ef32149683a28178cde91694f2ce.mesh" ]
+
+source_file="res://primitives/Fan.obj"
+dest_files=[ "res://.import/Fan.obj-1ea4ef32149683a28178cde91694f2ce.mesh", "res://.import/Fan.obj-1ea4ef32149683a28178cde91694f2ce.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

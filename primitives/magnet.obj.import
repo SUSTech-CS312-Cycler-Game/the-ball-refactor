@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/magnet.obj-ff9b5f20a60503334624ac8e99d5110d.mesh"
+
+[deps]
+
+files=[ "res://.import/magnet.obj-ff9b5f20a60503334624ac8e99d5110d.mesh" ]
+
+source_file="res://primitives/magnet.obj"
+dest_files=[ "res://.import/magnet.obj-ff9b5f20a60503334624ac8e99d5110d.mesh", "res://.import/magnet.obj-ff9b5f20a60503334624ac8e99d5110d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

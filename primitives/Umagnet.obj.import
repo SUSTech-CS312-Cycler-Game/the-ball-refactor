@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Umagnet.obj-62dd2da4197cce6a4f58b1c2c715da56.mesh"
+
+[deps]
+
+files=[ "res://.import/Umagnet.obj-62dd2da4197cce6a4f58b1c2c715da56.mesh" ]
+
+source_file="res://primitives/Umagnet.obj"
+dest_files=[ "res://.import/Umagnet.obj-62dd2da4197cce6a4f58b1c2c715da56.mesh", "res://.import/Umagnet.obj-62dd2da4197cce6a4f58b1c2c715da56.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

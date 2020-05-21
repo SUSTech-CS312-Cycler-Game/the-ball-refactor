@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/track-road.obj-334fdfcdf6ff0eabd1e5c52b96f94480.mesh"
+
+[deps]
+
+files=[ "res://.import/track-road.obj-334fdfcdf6ff0eabd1e5c52b96f94480.mesh" ]
+
+source_file="res://primitives/track-road.obj"
+dest_files=[ "res://.import/track-road.obj-334fdfcdf6ff0eabd1e5c52b96f94480.mesh", "res://.import/track-road.obj-334fdfcdf6ff0eabd1e5c52b96f94480.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
