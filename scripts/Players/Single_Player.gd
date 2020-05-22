@@ -22,12 +22,12 @@ var Y = 1
 # A default position to apply forces
 var position = Vector3(0, 0, 0)
 
-var initial_position = get_translation()
+var initial_position
 func _ready():
 	# When this node enters the scene, start calling its
 	# _fixed_process() method for physics logic
 #    set_fixed_process(true)
-#	initial_position = get_translation()
+	initial_position = get_translation()
 	set_physics_process(true)
 	# Initialize count
 	count = 0
@@ -37,10 +37,10 @@ func _ready():
 	# Update labels
 #	update_ui()
 	# Get screen size
-	var camera = get_node("../Camera")
-	var rect = camera.get_viewport().get_visible_rect()
-	x_max = rect.size[X]
-	y_max = rect.size[Y]
+#	var camera = get_node("../Camera")
+#	var rect = camera.get_viewport().get_visible_rect()
+#	x_max = rect.size[X]
+#	y_max = rect.size[Y]
 
 func _physics_process(delta):
 	# Get the direction that the user wants to move
