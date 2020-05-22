@@ -58,7 +58,6 @@ ball_jump_2={
 
 [physics]
 
-3d/physics_engine="GodotPhysics"
 3d/active_soft_world=false
 
 [rendering]

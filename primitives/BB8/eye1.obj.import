@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/eye1.obj-e9ebc4b057ef174772963f3acb121e74.mesh"
+
+[deps]
+
+files=[ "res://.import/eye1.obj-e9ebc4b057ef174772963f3acb121e74.mesh" ]
+
+source_file="res://primitives/BB8/eye1.obj"
+dest_files=[ "res://.import/eye1.obj-e9ebc4b057ef174772963f3acb121e74.mesh", "res://.import/eye1.obj-e9ebc4b057ef174772963f3acb121e74.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

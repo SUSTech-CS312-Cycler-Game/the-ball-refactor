@@ -18,6 +18,8 @@
 [node name="Walls" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49972, -6.99766 )
+contacts_reported = 4
 
 [node name="Camera" parent="." instance=ExtResource( 4 )]
 
@@ -34,7 +36,7 @@ angle_velocity = 30
 velocity = 3.0
 
 [node name="Magnet" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9911, 1, 12.0624 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.991, 3, 12.062 )
 
 [node name="UMagnet" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9778, 1.23978, 10.02 )

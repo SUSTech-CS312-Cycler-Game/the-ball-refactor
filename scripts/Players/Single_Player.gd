@@ -20,14 +20,14 @@ var X = 0
 var Y = 1
 
 # A default position to apply forces
-var position = Vector3(0, 50, 4)
+var position = Vector3(0, 0, 0)
 
 var initial_position = get_translation()
 func _ready():
 	# When this node enters the scene, start calling its
 	# _fixed_process() method for physics logic
 #    set_fixed_process(true)
-	position = get_translation()
+#	initial_position = get_translation()
 	set_physics_process(true)
 	# Initialize count
 	count = 0
@@ -51,10 +51,10 @@ func _physics_process(delta):
 	# Build a unit direction vector based on the user
 	# input we received
 	var direction = Vector3(x, 0, z).normalized()
-	print(direction)
+#	print(direction)
 	var v = get_linear_velocity().length()
 	if v == 0: 
-		v = 0.1
+		v = 1
 	var force = power / v
 	# Scale the magnitude of the applied force, for this
 	# frame, by the time required to draw a frame.

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/antenna1.obj-158065fd15957d8ead73a062e4798432.mesh"
+
+[deps]
+
+files=[ "res://.import/antenna1.obj-158065fd15957d8ead73a062e4798432.mesh" ]
+
+source_file="res://primitives/BB8/antenna1.obj"
+dest_files=[ "res://.import/antenna1.obj-158065fd15957d8ead73a062e4798432.mesh", "res://.import/antenna1.obj-158065fd15957d8ead73a062e4798432.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -42,9 +42,11 @@ mesh = ExtResource( 2 )
 material/0 = SubResource( 1 )
 
 [node name="magnet_collision" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Field" type="Area" parent="."]
+visible = false
 space_override = 1
 gravity_point = true
 gravity_distance_scale = 0.05
@@ -52,24 +54,29 @@ gravity_vec = Vector3( 0, 0, 0 )
 gravity = 10.0
 
 [node name="field_collison" type="CollisionShape" parent="Field"]
+visible = false
 shape = SubResource( 3 )
 
 [node name="Particles" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, -0.0116587, -0.999932, 0, 0.999932, -0.0116587, 0, 0, 4 )
+visible = false
 process_material = SubResource( 4 )
 draw_pass_1 = SubResource( 6 )
 
 [node name="Particles2" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, -4 )
+visible = false
 process_material = SubResource( 4 )
 draw_pass_1 = SubResource( 6 )
 
 [node name="Particles3" type="Particles" parent="."]
 transform = Transform( 0.0508194, 0.998708, 1.6271e-07, 0, -1.62921e-07, 1, 0.998708, -0.0508194, -8.27955e-09, 5.58047, 0, 0.415552 )
+visible = false
 process_material = SubResource( 4 )
 draw_pass_1 = SubResource( 6 )
 
 [node name="Particles4" type="Particles" parent="."]
 transform = Transform( 0.0267528, -0.999642, -1.62863e-07, 0, -1.62921e-07, 1, -0.999642, -0.0267528, -4.35859e-09, -4.61544, 0, 0.415552 )
+visible = false
 process_material = SubResource( 4 )
 draw_pass_1 = SubResource( 6 )

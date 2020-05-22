@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/Elements/Particles.gd" type="Script" id=1]
+[ext_resource path="res://primitives/particlePack_1.1/PNG (Black background)/fire_01.png" type="Texture" id=2]
+
+[sub_resource type="Curve" id=3]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 0.994444, -360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0.464968, 0.541401, 0.66242, 0.764331, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.128187, 0.0679586, 0.644348, 1, 0.15684, 0.0831493, 0.788379, 1, 0.18097, 0.0959415, 0.909668, 1, 0.665306, 0.87793, 0.859242, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.522222, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.864773 ), 0.0123218, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+emission_shape = 1
+emission_sphere_radius = 0.2
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 30.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 4 )
+linear_accel = 3.0
+scale = 4.0
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 6 )
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=11]
+material = SubResource( 10 )
+
+[node name="Particles" type="Particles"]
+transform = Transform( 1, 0, 0, 0, 0.00753975, 0.999972, 0, -0.999972, 0.00753975, 0, 0, 0 )
+amount = 32
+speed_scale = 7.0
+visibility_aabb = AABB( -2.60901, -3.08307, -2.91537, 5.21802, 6.16614, 5.83075 )
+local_coords = false
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 11 )
+script = ExtResource( 1 )

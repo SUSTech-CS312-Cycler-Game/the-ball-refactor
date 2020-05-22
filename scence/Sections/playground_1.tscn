@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scence/Elements/Single_Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scence/Players/Single_Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scence/Elements/LightRig.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scence/Elements/playground.tscn" type="PackedScene" id=4]
+
+[node name="World" type="Spatial"]
+
+[node name="LightRig" parent="." instance=ExtResource( 3 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5789, 9.32223, 0 )
+
+[node name="Camera" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 21.6128, 20, 20 )
+
+[node name="ground" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43761, 0, 0 )
